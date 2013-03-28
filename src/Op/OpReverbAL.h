@@ -16,6 +16,13 @@ struct ALeffectslot;
 struct ALeffect;
 
 // ReverbAL
+//
+// -> Experimental modification/test/adaption of OpenAL (Soft) Reverb.
+//    
+//    The original code can be found here:
+//    http://connect.creativelabs.com/openal/Downloads/
+//
+//    It's licensed under LGPL, so there might be some issues...
 ////////////////////////////////////////////////////////////////////////////////
 class COpReverbAL : public COp
 {
