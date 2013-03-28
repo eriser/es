@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{07187346-2580-478C-A561-4C0EDB9E5337}</ProjectGuid>
+    <RootNamespace>prj</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)_$(Platform)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Configuration)_$(Platform)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)_$(Platform)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)_$(Platform)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)_$(Platform)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Configuration)_$(Platform)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)_$(Platform)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)_$(Platform)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../src/EXTERN/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WINDOWS__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;opengl32.lib;glu32.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../bin/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../src/EXTERN/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WINDOWS__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;opengl32.lib;glu32.lib;dsound_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../bin/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../src/EXTERN/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__WINDOWS__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;opengl32.lib;glu32.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../bin/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../src/EXTERN/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__WINDOWS__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;opengl32.lib;glu32.lib;dsound_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../bin/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Array\Array.cpp" />
+    <ClCompile Include="..\src\AS\AS.cpp" />
+    <ClCompile Include="..\src\Ctrl.cpp" />
+    <ClCompile Include="..\src\DEF.cpp" />
+    <ClCompile Include="..\src\File\File.cpp" />
+    <ClCompile Include="..\src\File\FileBlock.cpp" />
+    <ClCompile Include="..\src\File\FileBlockImg.cpp" />
+    <ClCompile Include="..\src\File\FileBlockImgBmp.cpp" />
+    <ClCompile Include="..\src\File\FileBlockMidi.cpp" />
+    <ClCompile Include="..\src\File\FileStream.cpp" />
+    <ClCompile Include="..\src\File\FileStreamWav.cpp" />
+    <ClCompile Include="..\src\Op\OpCompressEx.cpp" />
+    <ClCompile Include="..\src\Op\OpOscLUT.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqAAS.cpp" />
+    <ClCompile Include="..\src\Wnd\FSAA.cpp" />
+    <ClCompile Include="..\src\GLGrab\GLGrab.cpp" />
+    <ClCompile Include="..\src\GLTool\GLTool.cpp" />
+    <ClCompile Include="..\src\GLTxt\GLTxtDEF.cpp" />
+    <ClCompile Include="..\src\GLTxt\GLTxtFont.cpp" />
+    <ClCompile Include="..\src\GLTxt\GLTxtPrinter.cpp" />
+    <ClCompile Include="..\src\List\List.cpp" />
+    <ClCompile Include="..\src\Main.cpp" />
+    <ClCompile Include="..\src\MIDI\MIDI.cpp" />
+    <ClCompile Include="..\src\Op\Op.cpp" />
+    <ClCompile Include="..\src\Op\OpAccum.cpp" />
+    <ClCompile Include="..\src\Op\OpAdd.cpp" />
+    <ClCompile Include="..\src\Op\OpAMU.cpp" />
+    <ClCompile Include="..\src\Op\OpBit.cpp" />
+    <ClCompile Include="..\src\Op\OpBitSplit.cpp" />
+    <ClCompile Include="..\src\Op\OpBuffer.cpp" />
+    <ClCompile Include="..\src\Op\OpChorus.cpp" />
+    <ClCompile Include="..\src\Op\OpClip.cpp" />
+    <ClCompile Include="..\src\Op\OpCmp.cpp" />
+    <ClCompile Include="..\src\Op\OpCombiner.cpp" />
+    <ClCompile Include="..\src\Op\OpCompress.cpp" />
+    <ClCompile Include="..\src\Op\OpConverter.cpp" />
+    <ClCompile Include="..\src\Op\OpDEF.cpp" />
+    <ClCompile Include="..\src\Op\OpDelay.cpp" />
+    <ClCompile Include="..\src\Op\OpDemux.cpp" />
+    <ClCompile Include="..\src\Op\OpDetect.cpp" />
+    <ClCompile Include="..\src\Op\OpDiff.cpp" />
+    <ClCompile Include="..\src\Op\OpDistort.cpp" />
+    <ClCompile Include="..\src\Op\OpDiv.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv1Bzr.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv1Exp.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv1Lin.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv1Sin.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv2Bzr.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv2Exp.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv2Lin.cpp" />
+    <ClCompile Include="..\src\Op\OpEnv2Sin.cpp" />
+    <ClCompile Include="..\src\Op\OpEnvAdsr.cpp" />
+    <ClCompile Include="..\src\Op\OpEnvGlider.cpp" />
+    <ClCompile Include="..\src\Op\OpEventTable.cpp" />
+    <ClCompile Include="..\src\Op\OpFader.cpp" />
+    <ClCompile Include="..\src\Op\OpFileWavIn.cpp" />
+    <ClCompile Include="..\src\Op\OpFileWavOut.cpp" />
+    <ClCompile Include="..\src\Op\OpFlanger.cpp" />
+    <ClCompile Include="..\src\Op\OpFltAllpass.cpp" />
+    <ClCompile Include="..\src\Op\OpFltAllpass1.cpp" />
+    <ClCompile Include="..\src\Op\OpFltAllpass2.cpp" />
+    <ClCompile Include="..\src\Op\OpFltBiquad.cpp" />
+    <ClCompile Include="..\src\Op\OpFltComb.cpp" />
+    <ClCompile Include="..\src\Op\OpFltEq3.cpp" />
+    <ClCompile Include="..\src\Op\OpFltFBack.cpp" />
+    <ClCompile Include="..\src\Op\OpFltFForw.cpp" />
+    <ClCompile Include="..\src\Op\OpFltFFT.cpp" />
+    <ClCompile Include="..\src\Op\OpFltHighLow.cpp" />
+    <ClCompile Include="..\src\Op\OpFltLow0.cpp" />
+    <ClCompile Include="..\src\Op\OpFltMoog.cpp" />
+    <ClCompile Include="..\src\Op\OpFltRes0.cpp" />
+    <ClCompile Include="..\src\Op\OpFltTB303.cpp" />
+    <ClCompile Include="..\src\Op\OpGate.cpp" />
+    <ClCompile Include="..\src\Op\OpIf.cpp" />
+    <ClCompile Include="..\src\Op\OpInter.cpp" />
+    <ClCompile Include="..\src\Op\OpLadder.cpp" />
+    <ClCompile Include="..\src\Op\OpLogic.cpp" />
+    <ClCompile Include="..\src\Op\OpLoop.cpp" />
+    <ClCompile Include="..\src\Op\OpMAD.cpp" />
+    <ClCompile Include="..\src\Op\OpMathArcus.cpp" />
+    <ClCompile Include="..\src\Op\OpMathExp.cpp" />
+    <ClCompile Include="..\src\Op\OpMathFmod.cpp" />
+    <ClCompile Include="..\src\Op\OpMathLog.cpp" />
+    <ClCompile Include="..\src\Op\OpMathModf.cpp" />
+    <ClCompile Include="..\src\Op\OpMathNum.cpp" />
+    <ClCompile Include="..\src\Op\OpMathPow.cpp" />
+    <ClCompile Include="..\src\Op\OpMathSqrt.cpp" />
+    <ClCompile Include="..\src\Op\OpMathTrigo.cpp" />
+    <ClCompile Include="..\src\Op\OpMidiDevIn.cpp" />
+    <ClCompile Include="..\src\Op\OpMidiDevOut.cpp" />
+    <ClCompile Include="..\src\Op\OpMidiFileIn.cpp" />
+    <ClCompile Include="..\src\Op\OpMidiIn.cpp" />
+    <ClCompile Include="..\src\Op\OpMidiInKey.cpp" />
+    <ClCompile Include="..\src\Op\OpMidiOut.cpp" />
+    <ClCompile Include="..\src\Op\OpMix.cpp" />
+    <ClCompile Include="..\src\Op\OpMul.cpp" />
+    <ClCompile Include="..\src\Op\OpNop.cpp" />
+    <ClCompile Include="..\src\Op\OpOscApprox.cpp" />
+    <ClCompile Include="..\src\Op\OpOscCircle.cpp" />
+    <ClCompile Include="..\src\Op\OpOscPls.cpp" />
+    <ClCompile Include="..\src\Op\OpOscSaw.cpp" />
+    <ClCompile Include="..\src\Op\OpOscSin.cpp" />
+    <ClCompile Include="..\src\Op\OpOscTri.cpp" />
+    <ClCompile Include="..\src\Op\OpOscVar.cpp" />
+    <ClCompile Include="..\src\Op\OpPercDrum.cpp" />
+    <ClCompile Include="..\src\Op\OpPhaser.cpp" />
+    <ClCompile Include="..\src\Op\OpReducer.cpp" />
+    <ClCompile Include="..\src\Op\OpRetrigger.cpp" />
+    <ClCompile Include="..\src\Op\OpReverb.cpp" />
+    <ClCompile Include="..\src\Op\OpReverbAL.cpp" />
+    <ClCompile Include="..\src\Op\OpRouter.cpp" />
+    <ClCompile Include="..\src\Op\OpSampler.cpp" />
+    <ClCompile Include="..\src\Op\OpScale.cpp" />
+    <ClCompile Include="..\src\Op\OpSelector.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqCell1D.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqColl1D.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqFibo.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqLog.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqMandel.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqPrime.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqRand.cpp" />
+    <ClCompile Include="..\src\Op\OpSeqReca.cpp" />
+    <ClCompile Include="..\src\Op\OpSH.cpp" />
+    <ClCompile Include="..\src\Op\OpShaper.cpp" />
+    <ClCompile Include="..\src\Op\OpStep.cpp" />
+    <ClCompile Include="..\src\Op\OpSto.cpp" />
+    <ClCompile Include="..\src\Op\OpSub.cpp" />
+    <ClCompile Include="..\src\Op\OpSwitch.cpp" />
+    <ClCompile Include="..\src\Op\OpSys.cpp" />
+    <ClCompile Include="..\src\Op\OpTime.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkBuffer.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkBufferDelay.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkDEF.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkEnv.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkFFT.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkFlt.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkOsc.cpp" />
+    <ClCompile Include="..\src\OpTk\OpTkSeq.cpp" />
+    <ClCompile Include="..\src\Op\OpTransFFT.cpp" />
+    <ClCompile Include="..\src\Op\OpTrigger.cpp" />
+    <ClCompile Include="..\src\Op\OpValue.cpp" />
+    <ClCompile Include="..\src\OrgOp\OrgOp.cpp" />
+    <ClCompile Include="..\src\PrsBDF\PrsBDF.cpp" />
+    <ClCompile Include="..\src\Stack\Stack.cpp" />
+    <ClCompile Include="..\src\Str\Str.cpp" />
+    <ClCompile Include="..\src\Sys\Sys.cpp" />
+    <ClCompile Include="..\src\Time\Time.cpp" />
+    <ClCompile Include="..\src\VisOp\VisOp.cpp" />
+    <ClCompile Include="..\src\VisOp\VisOpDEF.cpp" />
+    <ClCompile Include="..\src\Wnd\Wnd.cpp" />
+    <ClCompile Include="..\src\Wnd\WndDEF.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Array\Array.h" />
+    <ClInclude Include="..\src\Array\Array.inline.h" />
+    <ClInclude Include="..\src\AS\AS.h" />
+    <ClInclude Include="..\src\Ctrl.h" />
+    <ClInclude Include="..\src\DEF.h" />
+    <ClInclude Include="..\src\File\File.h" />
+    <ClInclude Include="..\src\File\FileBlock.h" />
+    <ClInclude Include="..\src\File\FileBlockImg.h" />
+    <ClInclude Include="..\src\File\FileBlockImgBmp.h" />
+    <ClInclude Include="..\src\File\FileBlockMidi.h" />
+    <ClInclude Include="..\src\File\FileStream.h" />
+    <ClInclude Include="..\src\File\FileStreamWav.h" />
+    <ClInclude Include="..\src\Op\OpCompressEx.h" />
+    <ClInclude Include="..\src\Op\OpCompressEx.inline.h" />
+    <ClInclude Include="..\src\Op\OpOscLUT.h" />
+    <ClInclude Include="..\src\Op\OpSeqAAS.h" />
+    <ClInclude Include="..\src\Wnd\FSAA.h" />
+    <ClInclude Include="..\src\GLGrab\GLGrab.h" />
+    <ClInclude Include="..\src\GLTool\GLTool.h" />
+    <ClInclude Include="..\src\GLTool\GLTool.inline.h" />
+    <ClInclude Include="..\src\GLTxt\GLTxtDEF.h" />
+    <ClInclude Include="..\src\GLTxt\GLTxtFont.h" />
+    <ClInclude Include="..\src\GLTxt\GLTxtPrinter.h" />
+    <ClInclude Include="..\src\GLTxt\GLTxtPrinter.inline.h" />
+    <ClInclude Include="..\src\List\List.h" />
+    <ClInclude Include="..\src\List\List.inline.h" />
+    <ClInclude Include="..\src\Main.h" />
+    <ClInclude Include="..\src\MIDI\MIDI.h" />
+    <ClInclude Include="..\src\MIDI\MIDI.inline.h" />
+    <ClInclude Include="..\src\Op\Op.h" />
+    <ClInclude Include="..\src\Op\Op.inline.h" />
+    <ClInclude Include="..\src\Op\OpAccum.h" />
+    <ClInclude Include="..\src\Op\OpAdd.h" />
+    <ClInclude Include="..\src\Op\OpAMU.h" />
+    <ClInclude Include="..\src\Op\OpBit.h" />
+    <ClInclude Include="..\src\Op\OpBit.inline.h" />
+    <ClInclude Include="..\src\Op\OpBitSplit.h" />
+    <ClInclude Include="..\src\Op\OpBuffer.h" />
+    <ClInclude Include="..\src\Op\OpChorus.h" />
+    <ClInclude Include="..\src\Op\OpClip.h" />
+    <ClInclude Include="..\src\Op\OpCmp.h" />
+    <ClInclude Include="..\src\Op\OpCmp.inline.h" />
+    <ClInclude Include="..\src\Op\OpCombiner.h" />
+    <ClInclude Include="..\src\Op\OpCompress.h" />
+    <ClInclude Include="..\src\Op\OpConverter.h" />
+    <ClInclude Include="..\src\Op\OpDEF.h" />
+    <ClInclude Include="..\src\Op\OpDelay.h" />
+    <ClInclude Include="..\src\Op\OpDemux.h" />
+    <ClInclude Include="..\src\Op\OpDetect.h" />
+    <ClInclude Include="..\src\Op\OpDiff.h" />
+    <ClInclude Include="..\src\Op\OpDistort.h" />
+    <ClInclude Include="..\src\Op\OpDiv.h" />
+    <ClInclude Include="..\src\Op\OpEnv1Bzr.h" />
+    <ClInclude Include="..\src\Op\OpEnv1Exp.h" />
+    <ClInclude Include="..\src\Op\OpEnv1Lin.h" />
+    <ClInclude Include="..\src\Op\OpEnv1Sin.h" />
+    <ClInclude Include="..\src\Op\OpEnv2Bzr.h" />
+    <ClInclude Include="..\src\Op\OpEnv2Exp.h" />
+    <ClInclude Include="..\src\Op\OpEnv2Lin.h" />
+    <ClInclude Include="..\src\Op\OpEnv2Sin.h" />
+    <ClInclude Include="..\src\Op\OpEnvAdsr.h" />
+    <ClInclude Include="..\src\Op\OpEnvGlider.h" />
+    <ClInclude Include="..\src\Op\OpEventTable.h" />
+    <ClInclude Include="..\src\Op\OpFader.h" />
+    <ClInclude Include="..\src\Op\OpFileWavIn.h" />
+    <ClInclude Include="..\src\Op\OpFileWavOut.h" />
+    <ClInclude Include="..\src\Op\OpFlanger.h" />
+    <ClInclude Include="..\src\Op\OpFltAllpass.h" />
+    <ClInclude Include="..\src\Op\OpFltAllpass1.h" />
+    <ClInclude Include="..\src\Op\OpFltAllpass2.h" />
+    <ClInclude Include="..\src\Op\OpFltBiquad.h" />
+    <ClInclude Include="..\src\Op\OpFltComb.h" />
+    <ClInclude Include="..\src\Op\OpFltEq3.h" />
+    <ClInclude Include="..\src\Op\OpFltFBack.h" />
+    <ClInclude Include="..\src\Op\OpFltFForw.h" />
+    <ClInclude Include="..\src\Op\OpFltFFT.h" />
+    <ClInclude Include="..\src\Op\OpFltHighLow.h" />
+    <ClInclude Include="..\src\Op\OpFltLow0.h" />
+    <ClInclude Include="..\src\Op\OpFltMoog.h" />
+    <ClInclude Include="..\src\Op\OpFltRes0.h" />
+    <ClInclude Include="..\src\Op\OpFltTB303.h" />
+    <ClInclude Include="..\src\Op\OpGate.h" />
+    <ClInclude Include="..\src\Op\OpIf.h" />
+    <ClInclude Include="..\src\Op\OpInter.h" />
+    <ClInclude Include="..\src\Op\OpLadder.h" />
+    <ClInclude Include="..\src\Op\OpLogic.h" />
+    <ClInclude Include="..\src\Op\OpLogic.inline.h" />
+    <ClInclude Include="..\src\Op\OpLoop.h" />
+    <ClInclude Include="..\src\Op\OpMAD.h" />
+    <ClInclude Include="..\src\Op\OpMathArcus.h" />
+    <ClInclude Include="..\src\Op\OpMathExp.h" />
+    <ClInclude Include="..\src\Op\OpMathFmod.h" />
+    <ClInclude Include="..\src\Op\OpMathLog.h" />
+    <ClInclude Include="..\src\Op\OpMathModf.h" />
+    <ClInclude Include="..\src\Op\OpMathNum.h" />
+    <ClInclude Include="..\src\Op\OpMathPow.h" />
+    <ClInclude Include="..\src\Op\OpMathSqrt.h" />
+    <ClInclude Include="..\src\Op\OpMathTrigo.h" />
+    <ClInclude Include="..\src\Op\OpMidiDevIn.h" />
+    <ClInclude Include="..\src\Op\OpMidiDevOut.h" />
+    <ClInclude Include="..\src\Op\OpMidiFileIn.h" />
+    <ClInclude Include="..\src\Op\OpMidiIn.h" />
+    <ClInclude Include="..\src\Op\OpMidiInKey.h" />
+    <ClInclude Include="..\src\Op\OpMidiOut.h" />
+    <ClInclude Include="..\src\Op\OpMix.h" />
+    <ClInclude Include="..\src\Op\OpMul.h" />
+    <ClInclude Include="..\src\Op\OpNop.h" />
+    <ClInclude Include="..\src\Op\OpOscApprox.h" />
+    <ClInclude Include="..\src\Op\OpOscCircle.h" />
+    <ClInclude Include="..\src\Op\OpOscPls.h" />
+    <ClInclude Include="..\src\Op\OpOscSaw.h" />
+    <ClInclude Include="..\src\Op\OpOscSin.h" />
+    <ClInclude Include="..\src\Op\OpOscTri.h" />
+    <ClInclude Include="..\src\Op\OpOscVar.h" />
+    <ClInclude Include="..\src\Op\OpPercDrum.h" />
+    <ClInclude Include="..\src\Op\OpPhaser.h" />
+    <ClInclude Include="..\src\Op\OpReducer.h" />
+    <ClInclude Include="..\src\Op\OpRetrigger.h" />
+    <ClInclude Include="..\src\Op\OpReverb.h" />
+    <ClInclude Include="..\src\Op\OpReverbAL.h" />
+    <ClInclude Include="..\src\Op\OpRouter.h" />
+    <ClInclude Include="..\src\Op\OpSampler.h" />
+    <ClInclude Include="..\src\Op\OpScale.h" />
+    <ClInclude Include="..\src\Op\OpSelector.h" />
+    <ClInclude Include="..\src\Op\OpSeqCell1D.h" />
+    <ClInclude Include="..\src\Op\OpSeqColl1D.h" />
+    <ClInclude Include="..\src\Op\OpSeqFibo.h" />
+    <ClInclude Include="..\src\Op\OpSeqLog.h" />
+    <ClInclude Include="..\src\Op\OpSeqMandel.h" />
+    <ClInclude Include="..\src\Op\OpSeqPrime.h" />
+    <ClInclude Include="..\src\Op\OpSeqRand.h" />
+    <ClInclude Include="..\src\Op\OpSeqReca.h" />
+    <ClInclude Include="..\src\Op\OpSH.h" />
+    <ClInclude Include="..\src\Op\OpShaper.h" />
+    <ClInclude Include="..\src\Op\OpStep.h" />
+    <ClInclude Include="..\src\Op\OpSto.h" />
+    <ClInclude Include="..\src\Op\OpSub.h" />
+    <ClInclude Include="..\src\Op\OpSwitch.h" />
+    <ClInclude Include="..\src\Op\OpSys.h" />
+    <ClInclude Include="..\src\Op\OpTime.h" />
+    <ClInclude Include="..\src\OpTk\OpTkBuffer.h" />
+    <ClInclude Include="..\src\OpTk\OpTkBuffer.inline.h" />
+    <ClInclude Include="..\src\OpTk\OpTkBufferDelay.h" />
+    <ClInclude Include="..\src\OpTk\OpTkBufferDelay.inline.h" />
+    <ClInclude Include="..\src\OpTk\OpTkDEF.h" />
+    <ClInclude Include="..\src\OpTk\OpTkEnv.h" />
+    <ClInclude Include="..\src\OpTk\OpTkEnv.inline.h" />
+    <ClInclude Include="..\src\OpTk\OpTkFFT.h" />
+    <ClInclude Include="..\src\OpTk\OpTkFFT.inline.h" />
+    <ClInclude Include="..\src\OpTk\OpTkFlt.h" />
+    <ClInclude Include="..\src\OpTk\OpTkFlt.inline.h" />
+    <ClInclude Include="..\src\OpTk\OpTkOsc.h" />
+    <ClInclude Include="..\src\OpTk\OpTkOsc.inline.h" />
+    <ClInclude Include="..\src\OpTk\OpTkSeq.h" />
+    <ClInclude Include="..\src\OpTk\OpTkSeq.inline.h" />
+    <ClInclude Include="..\src\Op\OpTransFFT.h" />
+    <ClInclude Include="..\src\Op\OpTrigger.h" />
+    <ClInclude Include="..\src\Op\OpValue.h" />
+    <ClInclude Include="..\src\OrgOp\OrgOp.h" />
+    <ClInclude Include="..\src\OrgOp\OrgOp.inline.h" />
+    <ClInclude Include="..\src\PrsBDF\PrsBDF.h" />
+    <ClInclude Include="..\src\Stack\Stack.h" />
+    <ClInclude Include="..\src\Stack\Stack.inline.h" />
+    <ClInclude Include="..\src\Str\Str.h" />
+    <ClInclude Include="..\src\Str\Str.inline.h" />
+    <ClInclude Include="..\src\Sys\Sys.h" />
+    <ClInclude Include="..\src\Time\Time.h" />
+    <ClInclude Include="..\src\Time\Time.inline.h" />
+    <ClInclude Include="..\src\VisOp\VisOp.h" />
+    <ClInclude Include="..\src\VisOp\VisOpDEF.h" />
+    <ClInclude Include="..\src\Wnd\Wnd.h" />
+    <ClInclude Include="..\src\Wnd\Wnd.inline.h" />
+    <ClInclude Include="..\src\Wnd\WndDEF.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
