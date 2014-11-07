@@ -276,12 +276,12 @@ T COpTkSeqRecaman<T>::Proc()
 		Reset();
 	++m_iIndex;
 	const T tDiff = m_tV - m_iIndex;
-	const bool bNotExist = ( GetIndex( tDiff ) < 0 );
+	const bool bNotExist = ( this->GetIndex( tDiff ) < 0 );
 	if( m_tV > m_iIndex && bNotExist )
 		m_tV = tDiff;
 	else
 		m_tV += m_iIndex;
-	Insert( m_tV );
+	this->Insert( m_tV );
 	//if( !InsertIfNew( m_tV ) )
 	//	m_tV = m_ptSto[m_uiPos];
 	return m_tV;
