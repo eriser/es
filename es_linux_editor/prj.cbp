@@ -120,6 +120,9 @@
 		<Unit filename="../src/Op/OpCombiner.h" />
 		<Unit filename="../src/Op/OpCompress.cpp" />
 		<Unit filename="../src/Op/OpCompress.h" />
+		<Unit filename="../src/Op/OpCompressEx.cpp" />
+		<Unit filename="../src/Op/OpCompressEx.h" />
+		<Unit filename="../src/Op/OpCompressEx.inline.h" />
 		<Unit filename="../src/Op/OpConverter.cpp" />
 		<Unit filename="../src/Op/OpConverter.h" />
 		<Unit filename="../src/Op/OpDEF.cpp" />
@@ -249,6 +252,8 @@
 		<Unit filename="../src/Op/OpOscApprox.h" />
 		<Unit filename="../src/Op/OpOscCircle.cpp" />
 		<Unit filename="../src/Op/OpOscCircle.h" />
+		<Unit filename="../src/Op/OpOscLUT.cpp" />
+		<Unit filename="../src/Op/OpOscLUT.h" />
 		<Unit filename="../src/Op/OpOscPls.cpp" />
 		<Unit filename="../src/Op/OpOscPls.h" />
 		<Unit filename="../src/Op/OpOscSaw.cpp" />
@@ -281,6 +286,8 @@
 		<Unit filename="../src/Op/OpScale.h" />
 		<Unit filename="../src/Op/OpSelector.cpp" />
 		<Unit filename="../src/Op/OpSelector.h" />
+		<Unit filename="../src/Op/OpSeqAAS.cpp" />
+		<Unit filename="../src/Op/OpSeqAAS.h" />
 		<Unit filename="../src/Op/OpSeqCell1D.cpp" />
 		<Unit filename="../src/Op/OpSeqCell1D.h" />
 		<Unit filename="../src/Op/OpSeqColl1D.cpp" />
