@@ -18,7 +18,7 @@ ifeq ($(CFG),Debug)
   OUTPUT_DIR = Debug
   TARGET = prj
   C_INCLUDE_DIRS = 
-  C_PREPROC = -D_DEBUG -D__LINUX__ -D__LINUX_ALSA__ -D__LINUX_ALSASEQ__
+  C_PREPROC = -D_DEBUG -D__LINUX__ -D__LINUX_ALSA__ -D__LINUX_ALSASEQ__ -DGLTXT_USE_FONT_BDF -DGLTXT_USE_FONT_BDF_INCLUDE -DWND_USE_GLTXT_BDF
   CFLAGS = -pipe -Wall -W -g2 -O0 -frtti -Wno-variadic-macros -pg # -pedantic 
   RC_INCLUDE_DIRS = 
   RC_PREPROC = 
@@ -34,7 +34,7 @@ ifeq ($(CFG),Release)
   OUTPUT_DIR = Release
   TARGET = prj
   C_INCLUDE_DIRS = 
-  C_PREPROC = -D_RELEASE -D__LINUX__ -D__LINUX_ALSA__ -D__LINUX_ALSASEQ__
+  C_PREPROC = -D_RELEASE -D__LINUX__ -D__LINUX_ALSA__ -D__LINUX_ALSASEQ__ -DGLTXT_USE_FONT_BDF -DGLTXT_USE_FONT_BDF_INCLUDE -DWND_USE_GLTXT_BDF
   CFLAGS = -pipe -ffast-math -fno-builtin -W -g0 -O0 -fno-rtti -Wno-variadic-macros
   RC_INCLUDE_DIRS = 
   RC_PREPROC = 

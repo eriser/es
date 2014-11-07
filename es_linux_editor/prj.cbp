@@ -36,6 +36,9 @@
 			<Add option="-D__LINUX__" />
 			<Add option="-D__LINUX_ALSA__" />
 			<Add option="-D__LINUX_ALSASEQ__" />
+			<Add option="-DGLTXT_USE_FONT_BDF" />
+			<Add option="-DGLTXT_USE_FONT_BDF_INCLUDE" />
+			<Add option="-DWND_USE_GLTXT_BDF" />
 		</Compiler>
 		<Linker>
 			<Add library="asound" />
