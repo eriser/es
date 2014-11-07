@@ -25,7 +25,7 @@ ifeq ($(CFG),Debug)
   RC_PREPROC = 
   RCFLAGS = 
   LIB_DIRS =
-  LIBS = -lrt -lasound
+  LIBS = -lrt -lasound -lpthread
   LDFLAGS = -pipe -pg
 endif
 
@@ -41,7 +41,7 @@ ifeq ($(CFG),Release)
   RC_PREPROC = 
   RCFLAGS = 
   LIB_DIRS =
-  LIBS = -lrt -lasound
+  LIBS = -lrt -lasound -lpthread
   LDFLAGS = -pipe
 endif
 
