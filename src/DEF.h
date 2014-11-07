@@ -45,11 +45,11 @@
 //#define VERSION_RUNTIME_MODE_RENDER_TO_FILE
 
 #define RUNTIME_FILE_NAME_RENDER	"out.wav"
-#define RUNTIME_FILE_NAME_PATCH		"../build/run.patch.txt"
-#define RUNTIME_FILE_NAME_DEF		"../../build/run.def.txt"
-#define RUNTIME_FILE_NAME_REG		"../../build/run.reg.txt"
+#define RUNTIME_FILE_NAME_PATCH		"../data/run.patch.txt"
+#define RUNTIME_FILE_NAME_DEF		"../../data/run.def.txt"
+#define RUNTIME_FILE_NAME_REG		"../../data/run.reg.txt"
 #elif defined( USE_EDIT_PATCH )
-#define EDIT_FILE_NAME_PATCH		"../build/edit.patch.txt"
+#define EDIT_FILE_NAME_PATCH		"../data/edit.patch.txt"
 #endif // VERSION_RUNTIME
 
 
