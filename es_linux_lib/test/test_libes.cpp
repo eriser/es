@@ -18,8 +18,8 @@ int main()
 	esInter( &pdIn, &uiCountIn, &pdOut, &uiCountOut );
 	
 	printf( "\navailable interface ports (COpInter):\n" );
-	printf( "  inputs:  %d (%x)\n", uiCountIn, (unsigned int)pdIn );
-	printf( "  outputs: %d (%x)\n", uiCountOut, (unsigned int)pdOut );
+	printf( "  inputs:  %d (%p)\n", uiCountIn, (void *)pdIn );
+	printf( "  outputs: %d (%p)\n", uiCountOut, (void *)pdOut );
 	printf( "\npress any key to start...\n" );
 	getchar();
 	
