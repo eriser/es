@@ -25,7 +25,7 @@ ifeq ($(CFG),Debug)
   RC_PREPROC = 
   RCFLAGS = 
   LIB_DIRS = -L"../bin/lib" 
-  LIBS = -lrt -lasound -les8bII_linux_static
+  LIBS = -lrt -lasound -lpthread -les
   LDFLAGS = -pipe -pg
 endif
 
@@ -41,7 +41,7 @@ ifeq ($(CFG),Release)
   RC_PREPROC = 
   RCFLAGS = 
   LIB_DIRS = -L"../bin/lib" 
-  LIBS = -lrt -lasound -les8bII_linux_static
+  LIBS = -lrt -lasound -lpthread -les
   LDFLAGS = -pipe
 endif
 
