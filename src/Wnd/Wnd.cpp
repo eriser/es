@@ -1804,10 +1804,21 @@ bool CWndX11::Run()
 			case KeyPress:
 			{
 				WND_LOG( "KeyPress\n" );
-
-				const int iIndex = ( e.xkey.state & ShiftMask )?( 1 ):( 0 );
-				SetKey( XKeycodeToKeysym( m_poDisplay, e.xkey.keycode, iIndex ), true );
-
+                
+                
+                // fix 1 for XKeycodeToKeysym (requires X Keyboard Extension -> #include <X11/XKBlib.h>).
+				//const int iIndex = ( e.xkey.state & ShiftMask )?( 1 ):( 0 );
+                //SetKey( XkbKeycodeToKeysym( m_poDisplay, e.xkey.keycode, 0, iIndex ), true );
+                //
+                // fix 2 for XKeycodeToKeysym
+				SetKey( GetKey( e.xkey.keycode ), true );
+                //
+                //
+                // deprecated
+				//const int iIndex = ( e.xkey.state & ShiftMask )?( 1 ):( #include <X11/XKBlib.h>)0 );
+				//SetKey( XKeycodeToKeysym( m_poDisplay, e.xkey.keycode, iIndex ), true );
+                
+                
 				//if( XK_Return == XLookupKeysym( &e.xkey, 0 ) )
 				//	WND_LOG( "yeah\n" );
 
@@ -1830,15 +1841,23 @@ bool CWndX11::Run()
 			case KeyRelease:
 			{
 				// siehe KeyPress.
-				const int iIndex = ( e.xkey.state & ShiftMask )?( 1 ):( 0 );
-				SetKey( XKeycodeToKeysym( m_poDisplay, e.xkey.keycode, iIndex ), false );
+				
+				// fix 1 for XKeycodeToKeysym (requires X Keyboard Extension)
+				//const int iIndex = ( e.xkey.state & ShiftMask )?( 1 ):( 0 );
+                //SetKey( XkbKeycodeToKeysym( m_poDisplay, e.xkey.keycode, 0, iIndex ), false );
+                // fix 2 for XKeycodeToKeysym
+				SetKey( GetKey( e.xkey.keycode ), false );
+				//
+				// deprecated
+				//const int iIndex = ( e.xkey.state & ShiftMask )?( 1 ):( 0 );
+				//SetKey( XKeycodeToKeysym( m_poDisplay, e.xkey.keycode, iIndex ), false );
 
 				WND_LOG( "KeyRelease\n" );
 			}
 			break;
 			case ButtonPress:
 			{
-				bool bSingleClick = false;
+				//bool bSingleClick = false;
 				int iButton = -1;
 				unsigned int uiState = 0;
 
@@ -1865,7 +1884,7 @@ bool CWndX11::Run()
 							WND_LOG( "click" );
 							uiState = WND_MOUSE_STATE_DOWN;
 							//m_uiMouseDown |= uiMask;
-							bSingleClick = true;
+							//bSingleClick = true;
 						}
 						WND_LOG( ")\n" );
 
@@ -2071,14 +2090,15 @@ void CWndX11::ToggleScreenMode()
 	if( !m_bIsFullScreen )
 	{
 		Window oWndRoot;
-		int iPosXRel, iPosYRel;
+		int iPosXRel; //, iPosYRel;
 		unsigned int uiWidth, uiHeight;
 		XGetGeometry(
 			m_poDisplay, m_oWindow, &oWndRoot,
 			&iPosXRel, &iPosXRel,
 			&uiWidth, &uiHeight,
 			&m_uiBorder, &m_uiColorBits );
-		iPosYRel = iPosXRel = 0; // ...compiler warning
+		//iPosYRel = 0;
+		iPosXRel = 0; // ...compiler warning
 		m_iWindowWidth = uiWidth;
 		m_iWindowHeight = uiHeight;
 
@@ -2177,6 +2197,21 @@ void CWndX11::UpdatePosition()
 		0, 0, &m_iPosX, &m_iPosY, &oWDummy );
 
 	WND_LOG( "update position: %d, %d\n", m_iPosX, m_iPosY );
+}
+
+// new
+KeySym CWndX11::GetKey( unsigned int uiKeyCode ) const
+{
+    KeySym oRetKeySym;
+    int iKeySyms;
+    KeySym * poKeySym = XGetKeyboardMapping(
+        m_poDisplay,
+        uiKeyCode,
+        1,
+        &iKeySyms );
+    oRetKeySym = poKeySym[0];
+    XFree( poKeySym );
+    return oRetKeySym;
 }
 
 #endif // platform

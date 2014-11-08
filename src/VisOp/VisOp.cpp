@@ -2096,7 +2096,7 @@ void CVisOp::InsertUnconnectedItems( GLfloat fX, GLfloat fY )
 	do
 	{
 		m_poOrgOp->Rewind();
-		while( bIsSearching = m_poOrgOp->GetNext( &poOp ) )
+		while( ( bIsSearching = m_poOrgOp->GetNext( &poOp ) ) )
 		{
 			if( !SearchItem( poOp ) )
 			{

@@ -12,7 +12,7 @@
 #ifndef _WND_DEF_H_
 #define _WND_DEF_H_
 
-#define WND_VERSION			"0.35" // 2011-01-14
+#define WND_VERSION			"0.36" // 2014-11-08
 
 #define WND_USE_GLTXT
 //#define WND_USE_GLTXT_BDF
@@ -78,6 +78,7 @@
 #include <X11/keysym.h>
 #include <X11/cursorfont.h>
 #include <X11/extensions/xf86vmode.h>
+//#include <X11/XKBlib.h> // X Keyboard Extension
 #include <string.h>
 #include <unistd.h>
 

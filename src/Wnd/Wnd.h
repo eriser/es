@@ -244,9 +244,10 @@ private:
 
 	void SetKey( KeySym oKey, bool bState );
 	void UpdatePosition();
+	KeySym GetKey( unsigned int uiKeyCode ) const;
 	inline void SetFocus() const;
 	inline void UseCursor( Cursor oCursor ) const;
-
+    
 private:
 	bool m_bIsLooping;
 	bool m_bIsVisible;
