@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./util/env.sh
+source ./util/env.sh
 
 header="PROJECT:"
 
@@ -15,7 +15,8 @@ echo -e "\n\n$header libes\n"
 cd ../es_linux_lib
 ./doit.sh
 [ $? -ne 0 ] && exit -1
-cp libes.a ../bin/lib/lib${PRJ}_linux_static.a
+cp libes.a ../bin/lib
+#cp libes.a ../bin/lib/lib${PRJ}_linux_static.a
 [ $? -ne 0 ] && exit -1
 
 echo -e "\n\n$header eswav\n"
