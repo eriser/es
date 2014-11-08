@@ -391,7 +391,7 @@ void COpTkSeqAAS<T>::Precalc( unsigned int uiSize, T tInitSeq )
 		
 		unsigned int jr = 0, jw = 0;
 		T n;
-		while( n = aatBuffer[i][jr] )
+		while( ( n = aatBuffer[i][jr] ) )
 		{
 			unsigned int c = 0;
 			while( jr < MAX && n == aatBuffer[i][jr] )
