@@ -1360,9 +1360,6 @@ bool CWndX11::Init()
 		None };
 
 	int iVersionMajor, iVersionMinor;
-	int iBestVideoMode = -1;
-	int iVideoModeCount = 0;
-	XF86VidModeModeInfo **ppoVideoMode = 0;
 	XVisualInfo *poVisInfo = 0;
 	Colormap oColorMap;
 	XSetWindowAttributes oWndAttr;
@@ -1410,6 +1407,14 @@ bool CWndX11::Init()
 
 	if( m_bIsFullScreen )
 	{
+	    // HACK: Bypass window manager, just assume that the physical screen resolution
+	    // for the fullscreen window will work.
+	    // XF86 stuff seems to be not supported consistently...
+	    /*
+        int iBestVideoMode = -1;
+        int iVideoModeCount = 0;
+        XF86VidModeModeInfo **ppoVideoMode = 0;
+        
 		XF86VidModeGetAllModeLines(
 			m_poDisplay, m_iScreen,
 			&iVideoModeCount, &ppoVideoMode );
@@ -1443,7 +1448,8 @@ bool CWndX11::Init()
 		m_iScreenWidth = poVidMode->hdisplay;
 		m_iScreenHeight = poVidMode->vdisplay;
 		XFree( ppoVideoMode );
-
+        */
+        
 		oWndAttr.override_redirect = True;
 
 		m_oWindow = XCreateWindow( m_poDisplay, m_oWindowRoot,
@@ -1691,11 +1697,13 @@ void CWndX11::Clear()
 		glXDestroyContext( m_poDisplay, m_oContextGLX );
 		m_oContextGLX = 0;
 	}
-	if( m_bIsFullScreen )
-	{
-		XF86VidModeSwitchToMode( m_poDisplay, m_iScreen, &m_oVideoModeInfoPrev );
-		XF86VidModeSetViewPort( m_poDisplay, m_iScreen, 0, 0 );
-	}
+	// HACK: Bypass windows manger. XF86 seems to be not supported consistently...
+	// See also: CWndX11::Init().
+	//if( m_bIsFullScreen )
+	//{
+	//	XF86VidModeSwitchToMode( m_poDisplay, m_iScreen, &m_oVideoModeInfoPrev );
+	//	XF86VidModeSetViewPort( m_poDisplay, m_iScreen, 0, 0 );
+	//}
 	XDestroyWindow( m_poDisplay, m_oWindow );
 	//m_poHandler->OnClear();
 }
