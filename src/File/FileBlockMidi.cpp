@@ -81,23 +81,30 @@
 struct SChunkMThd
 {
 	// Here's the 8 byte header that all chunks must have
-	char m_acID[4];  // This will be 'M','T','h','d'
-	unsigned long int m_uliSize; // This will be 6
+	BYTE m_acID[4];  // This will be 'M','T','h','d'
+	DWORD m_uliSize; // This will be 6
+	//char m_acID[4];
+	//unsigned long int m_uliSize;
 };
 
 struct SChungMThd_Data
 {
 	// Here are the 6 bytes
-	unsigned short int m_usiFormat;
-	unsigned short int m_usiTrackCount;
-	unsigned short int m_usiDivision;
+	WORD m_usiFormat;
+	WORD m_usiTrackCount;
+	WORD m_usiDivision;
+	//unsigned short int m_usiFormat;
+	//unsigned short int m_usiTrackCount;
+	//unsigned short int m_usiDivision;
 };
 
 struct SChunkMTrk
 {
 	// Here's the 8 byte header that all chunks must have
-	char m_acID[4]; // This will be 'M','T','r','k'
-	unsigned long int m_uliSize; // This will be the actual size of Data[]
+	BYTE m_acID[4]; // This will be 'M','T','r','k'
+	DWORD m_uliSize; // This will be the actual size of Data[]
+	//char m_acID[4];
+	//unsigned long int m_uliSize;
 	
 	// Here are the data bytes
 	//unsigned char m_aucData[]; // Its actual size is Data[Length]
@@ -261,7 +268,7 @@ bool CFileBlockMidi::Load( const char *pcFileName )
 	if( m_bIsLittleEndian_ )
 	// </mod>
 		SwapBytes_( &poHD->m_uliSize );
-	if( !strcmp( &poHD->m_acID[0], "MThd" ) 
+	if( !strcmp( (const char *)&poHD->m_acID[0], "MThd" ) 
 	 || poHD->m_uliSize != 6 )
 		return false;
 	pucData += sizeof( SChunkMThd );
@@ -313,7 +320,7 @@ bool CFileBlockMidi::Load( const char *pcFileName )
 		{
 			SwapBytes_( &poRK->m_uliSize );
 		}
-		if( !strcmp( &poRK->m_acID[0], "MTrk" ) 
+		if( !strcmp( (const char *)&poRK->m_acID[0], "MTrk" ) 
 		 || poRK->m_uliSize == 0L )
 			return false;
 		FBM_LOG( "\n\n************\ntrack %d length %li\n\n", t, poRK->m_uliSize );
@@ -347,7 +354,7 @@ bool CFileBlockMidi::Load( const char *pcFileName )
 			//FBM_LOG( "\tdata0: %d,\tdata1: %d\n", int(ucData0), int(ucData1) );
 			
 			// rem: Ist die Channel-Message undefiniert (<=0x70),
-			// so wird die letzt gültige verwendet. Das aktuelle
+			// so wird die letzt gï¿½ltige verwendet. Das aktuelle
 			// Byte ist dann das erste Daten-Byte der Message.
 			// Cubase speichert die Midi-Files mit dieser Methode.
 			// Wenn gleichzeitig die Note-On-Messages mit Velocity
@@ -747,7 +754,7 @@ LNoteOff:
 	FBM_LOG( "ok\n" );
 	
 	// Padding.
-	// rem: Zu kurze Tracks werden so lang wie der längste gemacht.
+	// rem: Zu kurze Tracks werden so lang wie der lï¿½ngste gemacht.
 	unsigned long int uliDurMax = GetTrackDurationMax();
 	for( unsigned int i=0; i<m_oArrTrack.GetSize(); ++i )
 	{

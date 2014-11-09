@@ -11,12 +11,12 @@
 
 #ifndef _WAVEFORMATEX_
 
-#if !defined( DWORD ) || !defined( WORD ) || !defined( BYTE )
-#include <inttypes.h>
-#define DWORD uint32_t // unsigned long int
-#define WORD uint16_t // unsigned short int
-#define BYTE uint8_t // unsigned char
-#endif // DWORD WORD BYTE
+//#if !defined( DWORD ) || !defined( WORD ) || !defined( BYTE )
+//#include <inttypes.h>
+//#define DWORD uint32_t // unsigned long int
+//#define WORD uint16_t // unsigned short int
+//#define BYTE uint8_t // unsigned char
+//#endif // DWORD WORD BYTE
 
 #define WAVE_FORMAT_PCM 1
 typedef struct { 

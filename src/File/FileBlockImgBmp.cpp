@@ -16,9 +16,10 @@
 #	define __ATTRIBUTE_PACKED__	__attribute__ ((__packed__))
 #endif
 
-typedef unsigned short WORD;
-typedef unsigned long DWORD;
-typedef long LONG;
+// Fixed size data types now defined in File.h.
+//typedef unsigned short WORD;
+//typedef unsigned long DWORD;
+//typedef long LONG;
 
 typedef struct __ATTRIBUTE_PACKED__ tagBITMAPFILEHEADER
 {

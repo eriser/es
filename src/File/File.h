@@ -8,7 +8,7 @@
 #define _FILE_H_
 
 #define FILE_USE_ANSI
-#define FILE_VERSION				"0.22" // 2010-12-30
+#define FILE_VERSION				"0.23" // 2014-11-09
 //#define FILE_USE_POSIX_STAT
 
 #ifdef __LINUX__
@@ -31,11 +31,11 @@
 #endif // platform
 
 #if defined( FILE_USE_ANSI )
-#define FILE_MEM_COPY(dst,src,bytes)		::memcpy(dst,src,bytes)
+#define FILE_MEM_COPY(dst,src,bytes)	::memcpy(dst,src,bytes)
 #define FILE_MEM_SET(dst,val,bytes)		::memset(dst,val,bytes)
 #define FILE_MEM_ZERO(dst,bytes)		::memset(dst,0,bytes)
 #elif defined( FILE_USE_WINDOWS )
-#define FILE_MEM_COPY(dst,src,bytes)		::CopyMemory(dst,src,bytes)
+#define FILE_MEM_COPY(dst,src,bytes)	::CopyMemory(dst,src,bytes)
 #define FILE_MEM_SET(dst,val,bytes)		::FillMemory(dst,bytes,val)
 #define FILE_MEM_ZERO(dst,bytes)		::ZeroMemory(dst,bytes)
 #endif // platform
@@ -45,6 +45,16 @@
 #else
 #define FILE_FOPEN( file, ... )			file = ::fopen( __VA_ARGS__ )
 #endif // _MSVC
+
+// Fixed size data types. // totest
+// Compatibility with windows?
+#if !defined( BYTE ) || !defined( WORD ) || !defined( DWORD ) || !defined( LONG )
+#include <inttypes.h>
+#define BYTE    uint8_t // unsigned char
+#define WORD    uint16_t // unsigned short int
+#define DWORD   uint32_t // unsigned long int
+#define LONG    int32_t // signed long int
+#endif // BYTE WORD DWORD LONG
 
 
 // Datei.
