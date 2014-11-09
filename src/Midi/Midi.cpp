@@ -786,7 +786,7 @@ void CMidiInFile::Proc()
 
 void CMidiInFile::UpdateMetrics()
 {
-	if( m_oFile.m_usiDivision == 0 )
+	if( m_oFile.m_uiDivision == 0 )
 		return;
 	double dBPM = m_dBPM;
 	if( dBPM < 0.0 )
@@ -796,7 +796,7 @@ void CMidiInFile::UpdateMetrics()
 	//const double dDurQuarter = ( 60.0 / dBPM );
 	//const double dDurClock = dDurQuarter / m_oFile.m_usiDivision;
 	m_dSamplesPerQuarter = ( m_uiSampleFreq * 60.0 ) / dBPM;
-	const double dSamplesPerClock = m_dSamplesPerQuarter / m_oFile.m_usiDivision;
+	const double dSamplesPerClock = m_dSamplesPerQuarter / m_oFile.m_uiDivision;
 	m_uiSamplesPerClock = (unsigned int)dSamplesPerClock;
 	m_dSamplesPerClockFrac = dSamplesPerClock - m_uiSamplesPerClock;
 }
@@ -808,7 +808,7 @@ unsigned int CMidiInFile::GetTrackCount() const
 
 unsigned int CMidiInFile::GetDivision() const
 {
-	return m_oFile.m_usiDivision;
+	return m_oFile.m_uiDivision;
 }
 
 unsigned long int CMidiInFile::GetClockMax() const

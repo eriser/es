@@ -34,23 +34,23 @@
 
 #define MIDI_NOTE_OFF			0x80
 #define MIDI_NOTE_ON			0x90
-#define MIDI_POLY_AFTERTOUCH		0xA0
+#define MIDI_POLY_AFTERTOUCH	0xA0
 #define MIDI_CONTROL_CHANGE		0xB0
 #define MIDI_PROGRAM_CHANGE		0xC0
-#define MIDI_CHANNEL_AFTERTOUCH		0xD0
+#define MIDI_CHANNEL_AFTERTOUCH	0xD0
 #define MIDI_PITCHBEND			0xE0
-#define MIDI_SYSEX			0xF0
+#define MIDI_SYSEX				0xF0
 
 #define MIDI_SONGPOS			0xF2
 #define MIDI_SONGSELECT			0xF3
 #define MIDI_TUNERREQUEST		0xF6
 #define MIDI_ENDSYSEX			0xF7
-#define MIDI_CLOCK			0xF8
-#define MIDI_START			0xFA
+#define MIDI_CLOCK				0xF8
+#define MIDI_START				0xFA
 #define MIDI_CONTINUE			0xFB
-#define MIDI_STOP			0xFC
+#define MIDI_STOP				0xFC
 #define MIDI_ACTIVESENSE		0xFE
-#define MIDI_META			0xFF
+#define MIDI_META				0xFF
 
 #define MIDI_MASK_STATUS		0xF0
 
@@ -59,40 +59,40 @@
 #define MIDI_COUNT_NOTES		0x80	// 0-127
 
 
-#define META_SEQNUM			0x00
-#define META_TEXT			0x01
+#define META_SEQNUM				0x00
+#define META_TEXT				0x01
 #define META_COPYRIGHT			0x02
 #define META_TRACKNAME			0x03
 #define META_INSTRUMENT			0x04
-#define META_LYRIC			0x05
-#define META_MARKER			0x06
+#define META_LYRIC				0x05
+#define META_MARKER				0x06
 #define META_CUEPOINT			0x07
 #define META_PROGRAM			0x08
-#define META_DEVICE			0x09
+#define META_DEVICE				0x09
 #define META_PREFIXCH			0x20
 #define META_PREFIXPORT			0x21
 #define META_ENDOFTRACK			0x2F
-#define META_TEMPO			0x51
-#define META_SMPTE			0x54
+#define META_TEMPO				0x51
+#define META_SMPTE				0x54
 #define META_TIMESIG			0x58
-#define META_KEYSIG			0x59
+#define META_KEYSIG				0x59
 #define META_PROPRIET			0x7F
 
 struct SChunkMThd
 {
 	// Here's the 8 byte header that all chunks must have
-	BYTE m_acID[4];  // This will be 'M','T','h','d'
-	DWORD m_uliSize; // This will be 6
-	//char m_acID[4];
+	BYTE m_tID[4];  // This will be 'M','T','h','d'
+	DWORD m_tSize; // This will be 6
+	//char m_tID[4];
 	//unsigned long int m_uliSize;
 };
 
 struct SChungMThd_Data
 {
 	// Here are the 6 bytes
-	WORD m_usiFormat;
-	WORD m_usiTrackCount;
-	WORD m_usiDivision;
+	WORD m_tFormat;
+	WORD m_tTrackCount;
+	WORD m_tDivision;
 	//unsigned short int m_usiFormat;
 	//unsigned short int m_usiTrackCount;
 	//unsigned short int m_usiDivision;
@@ -101,8 +101,8 @@ struct SChungMThd_Data
 struct SChunkMTrk
 {
 	// Here's the 8 byte header that all chunks must have
-	BYTE m_acID[4]; // This will be 'M','T','r','k'
-	DWORD m_uliSize; // This will be the actual size of Data[]
+	BYTE m_tID[4]; // This will be 'M','T','r','k'
+	DWORD m_tSize; // This will be the actual size of Data[]
 	//char m_acID[4];
 	//unsigned long int m_uliSize;
 	
@@ -226,8 +226,8 @@ void CFileBlockMidi::CTrack::Clear()
 
 CFileBlockMidi::CFileBlockMidi()
 : CFileBlock()
-, m_usiFormat( 0 )
-, m_usiDivision( 0 )
+, m_uiFormat( 0 )
+, m_uiDivision( 0 )
 , m_uiMicroSecPerQuarter( 0 )
 {}
 
@@ -247,8 +247,8 @@ CFileBlockMidi & CFileBlockMidi::operator=( const CFileBlockMidi &roO )
 	m_oArrTrack.Resize( roO.m_oArrTrack.GetSize() );
 	for( unsigned int i=0; i<m_oArrTrack.GetSize(); ++i )
 		m_oArrTrack[i] = new CTrack( *roO.m_oArrTrack[i] );
-	m_usiFormat = roO.m_usiFormat;
-	m_usiDivision = roO.m_usiDivision;
+	m_uiFormat = roO.m_uiFormat;
+	m_uiDivision = roO.m_uiDivision;
 	m_uiMicroSecPerQuarter = roO.m_uiMicroSecPerQuarter;
 	return *this;
 }
@@ -267,9 +267,9 @@ bool CFileBlockMidi::Load( const char *pcFileName )
 	// <mod date="2010-12-09">
 	if( m_bIsLittleEndian_ )
 	// </mod>
-		SwapBytes_( &poHD->m_uliSize );
-	if( !strcmp( (const char *)&poHD->m_acID[0], "MThd" ) 
-	 || poHD->m_uliSize != 6 )
+		SwapBytes_( &poHD->m_tSize );
+	if( !strcmp( (const char *)&poHD->m_tID[0], "MThd" ) 
+	 || poHD->m_tSize != 6 )
 		return false;
 	pucData += sizeof( SChunkMThd );
 	
@@ -279,13 +279,13 @@ bool CFileBlockMidi::Load( const char *pcFileName )
 	if( m_bIsLittleEndian_ )
 	// </mod>
 	{
-		SwapBytes_( &poHDD->m_usiFormat );
-		SwapBytes_( &poHDD->m_usiTrackCount );
-		SwapBytes_( &poHDD->m_usiDivision );
+		SwapBytes_( &poHDD->m_tFormat );
+		SwapBytes_( &poHDD->m_tTrackCount );
+		SwapBytes_( &poHDD->m_tDivision );
 	}
-	if( poHDD->m_usiFormat > 1 || poHDD->m_usiTrackCount == 0 )
+	if( poHDD->m_tFormat > 1 || poHDD->m_tTrackCount == 0 )
 		return false;
-	if( poHDD->m_usiFormat == 0 && poHDD->m_usiTrackCount > 1 )
+	if( poHDD->m_tFormat == 0 && poHDD->m_tTrackCount > 1 )
 		return false;
 	
 	// rem: Division
@@ -293,19 +293,19 @@ bool CFileBlockMidi::Load( const char *pcFileName )
 	// Per Quarter Note (abbreviated as PPQN) resolution the time-stamps are based upon, 
 	// Division. 
 	// For example, if your sequencer has 96 ppqn, this field would be (in hex):	00 60 
-	m_usiFormat = poHDD->m_usiFormat;
-	m_usiDivision = poHDD->m_usiDivision;
+	m_uiFormat = poHDD->m_tFormat;
+	m_uiDivision = poHDD->m_tDivision;
 	
 	pucData += sizeof( SChungMThd_Data );
 	
 	FBM_LOG( "\nMidi File\n\n" );
-	FBM_LOG( "\ttype:\t%d\n", m_usiFormat );
-	FBM_LOG( "\tdivision:\t%d\n", m_usiDivision );
-	FBM_LOG( "\ttrack count:\t%d\n", poHDD->m_usiTrackCount );
+	FBM_LOG( "\ttype:\t%d\n", m_uiFormat );
+	FBM_LOG( "\tdivision:\t%d\n", m_uiDivision );
+	FBM_LOG( "\ttrack count:\t%d\n", poHDD->m_tTrackCount );
 	FBM_LOG( "\n" );
 	
 	// MTrk-Header und Daten.
-	for( unsigned short int t = 0; t < poHDD->m_usiTrackCount; ++t )
+	for( unsigned short int t = 0; t < poHDD->m_tTrackCount; ++t )
 	{
 		if( (unsigned int)( pucData - m_pucData ) >= m_uiSize )
 		{
@@ -318,17 +318,17 @@ bool CFileBlockMidi::Load( const char *pcFileName )
 		if( m_bIsLittleEndian_ )
 		// </mod>
 		{
-			SwapBytes_( &poRK->m_uliSize );
+			SwapBytes_( &poRK->m_tSize );
 		}
-		if( !strcmp( (const char *)&poRK->m_acID[0], "MTrk" ) 
-		 || poRK->m_uliSize == 0L )
+		if( !strcmp( (const char *)&poRK->m_tID[0], "MTrk" ) 
+		 || poRK->m_tSize == 0L )
 			return false;
-		FBM_LOG( "\n\n************\ntrack %d length %li\n\n", t, poRK->m_uliSize );
+		FBM_LOG( "\n\n************\ntrack %d length %d\n\n", t, poRK->m_tSize );
 		
 		CTrack *poTrack = new CTrack;
 		
 		unsigned char *pucD = pucData + sizeof(SChunkMTrk);
-		pucData = pucD + poRK->m_uliSize;
+		pucData = pucD + poRK->m_tSize;
 		unsigned long int uliClocks = 0L;
 		unsigned long int uliClocksAdd = 0L;
 		bool bNotEndOfTrack = true;
@@ -788,8 +788,8 @@ void CFileBlockMidi::Clear()
 	}
 	m_oArrTrack.Clear();
 	
-	m_usiFormat = 0;
-	m_usiDivision = 0;
+	m_uiFormat = 0;
+	m_uiDivision = 0;
 	m_uiMicroSecPerQuarter = 0;
 	CFileBlock::Clear();
 }

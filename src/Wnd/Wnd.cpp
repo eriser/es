@@ -501,8 +501,8 @@ void CWnd::BorderCheck()
 			m_iWindowHeight = WND_MIN_HEIGHT;
 		}
 
-		// Würde sonst in UpdateSizeAndPos() verschoben, hier wird aber die
-		// Grösse angepasst, nicht die Position.
+		// WÃ¼rde sonst in UpdateSizeAndPos() verschoben, hier wird aber die
+		// GrÃ¶sse angepasst, nicht die Position.
 		// mod (0.20): Kein Ahnung was das soll!
 		//if( m_iPosX + m_iWindowWidth > m_iScreenWidth )
 		//	m_iWindowWidth = m_iScreenWidth - m_iPosX;
@@ -511,12 +511,12 @@ void CWnd::BorderCheck()
 
 		UpdateSizeAndPos();      // Setzt Koordinaten.
 		m_poHandler->OnSize();   // Aktualisiert den OpenGL-Kontext.
-		m_poHandler->OnUpdate(); // Aktualisiert pixelgrössenabhängige Werte.
+		m_poHandler->OnUpdate(); // Aktualisiert pixelgrÃ¶ssenabhÃ¤ngige Werte.
 		m_poHandler->OnDisplay(); // Zeichnet neu.
 	}
 	else
 	{
-		if( !m_bIsCaptured ) // Undefiniert, am äussersten Rand.
+		if( !m_bIsCaptured ) // Undefiniert, am Ã¤ussersten Rand.
 		{
 			const bool bX = ( m_iMousePosX < 0 );
 			const bool bY = ( m_iMousePosY < 0 );
@@ -992,7 +992,7 @@ LRESULT CALLBACK CWndMS::Proc_( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 					poWnd->m_aiResizeStart[1] = poWnd->m_iPosY;
 					poWnd->m_aiResizeStart[2] = poWnd->m_iWindowWidth;
 					poWnd->m_aiResizeStart[3] = poWnd->m_iWindowHeight;
-					// Pedantisch: Damit das Fenster nicht sprunghaft seine Grösse ändert.
+					// Pedantisch: Damit das Fenster nicht sprunghaft seine GrÃ¶sse Ã¤ndert.
 					poWnd->m_aiResizeStart[4] = oPnt.x - poWnd->m_iPosX;
 					poWnd->m_aiResizeStart[5] = oPnt.y - poWnd->m_iPosY;
 					poWnd->m_aiResizeStart[6] = poWnd->m_iPosX + poWnd->m_iWindowWidth - oPnt.x;
@@ -1169,7 +1169,7 @@ LRESULT CALLBACK CWndMS::Proc_( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 
 				for(nIndex = 0; nIndex < nCnt; ++nIndex)
 				{
-					// Länge des Dateinamens ermitteln
+					// LÃ¤nge des Dateinamens ermitteln
 					if( !( nSize = DragQueryFile( hDrop, nIndex, NULL, 0 ) ) )
 						continue;
 
@@ -1308,8 +1308,8 @@ CWndX11::CWndX11()
 #endif // WND_USE_GLTXT_BDF
 #endif // WND_USE_GLTXT
 
-	// Aktuelle Screen-Grösse ermitteln, und als
-	// Default-Auflösung für den Fullscreen-Modus setzen.
+	// Aktuelle Screen-GrÃ¶sse ermitteln, und als
+	// Default-AuflÃ¶sung fÃ¼r den Fullscreen-Modus setzen.
 	// Wird nur einmal abgefragt...
 	XWindowAttributes oWndAttr;
 	XGetWindowAttributes( m_poDisplay,  DefaultRootWindow( m_poDisplay ), &oWndAttr );
@@ -1931,7 +1931,7 @@ bool CWndX11::Run()
 						m_aiResizeStart[1] = m_iPosY;
 						m_aiResizeStart[2] = m_iWindowWidth;
 						m_aiResizeStart[3] = m_iWindowHeight;
-						// Pedantisch: Damit das Fenster nicht sprunghaft seine Grösse ändert.
+						// Pedantisch: Damit das Fenster nicht sprunghaft seine GrÃ¶sse Ã¤ndert.
 						m_aiResizeStart[4] = gx - m_iPosX;
 						m_aiResizeStart[5] = gy - m_iPosY;
 						m_aiResizeStart[6] = m_iPosX + m_iWindowWidth - gx;

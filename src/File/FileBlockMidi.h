@@ -78,8 +78,8 @@ public:
 	void ResetTrack( unsigned int uiTrack );
 	bool Clock( unsigned int uiTrack, CEvent **ppoEvent );
 public:
-	unsigned int m_usiFormat;
-	unsigned int m_usiDivision; // PPQN (Pulses Per Quarter Note / Resolution / Clocks Per Quarter)
+	unsigned int m_uiFormat;
+	unsigned int m_uiDivision; // PPQN (Pulses Per Quarter Note / Resolution / Clocks Per Quarter)
 	unsigned int m_uiMicroSecPerQuarter;
 protected:
 	CArray<CTrack *> m_oArrTrack;
