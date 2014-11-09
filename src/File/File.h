@@ -52,10 +52,10 @@
 #	include <windows.h>
 #elif defined( __LINUX__ )
 #include <inttypes.h>
-typedef uint8_t		BYTE // unsigned char
-typedef uint16_t	WORD // unsigned short int
-typedef uint32_t	DWORD // unsigned long int
-typedef int32_t		LONG // signed long int
+typedef uint8_t	BYTE; // unsigned char
+typedef uint16_t	WORD; // unsigned short int
+typedef uint32_t	DWORD; // unsigned long int
+typedef int32_t	LONG; // signed long int
 #else
 #	error platform not supported
 #endif // platform
