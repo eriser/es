@@ -2047,6 +2047,7 @@ bool CWndX11::Run()
 				if( e.xclient.message_type == m_oDND.XdndEnter )
 				{
 					WND_LOG( "XdndEnter\n" );
+					BringToTop();
 					m_oDND.handleEnterEvent( e );
 				}
 				else if( e.xclient.message_type == m_oDND.XdndPosition )
