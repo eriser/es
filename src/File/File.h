@@ -47,14 +47,18 @@
 #endif // _MSVC
 
 // Fixed size data types. // totest
-// Compatibility with windows?
-#if !defined( BYTE ) || !defined( WORD ) || !defined( DWORD ) || !defined( LONG )
+#if defined( __WINDOWS__ )
+#	define WIN32_LEAN_AND_MEAN
+#	include <windows.h>
+#elif defined( __LINUX__ )
 #include <inttypes.h>
-#define BYTE    uint8_t // unsigned char
-#define WORD    uint16_t // unsigned short int
-#define DWORD   uint32_t // unsigned long int
-#define LONG    int32_t // signed long int
-#endif // BYTE WORD DWORD LONG
+typedef uint8_t		BYTE // unsigned char
+typedef uint16_t	WORD // unsigned short int
+typedef uint32_t	DWORD // unsigned long int
+typedef int32_t		LONG // signed long int
+#else
+#	error platform not supported
+#endif // platform
 
 
 // Datei.
