@@ -14,7 +14,7 @@
 // rem: Sowohl Editor-Patches als auch run-Patches konvertiert durch 'ptch'
 //      im C-String-Format können als gültige Input-Files verwendet werden!
 #define PATCH_POSTFIX		".txt"
-#define KEY_SKIP		' '
+#define KEY_SKIP			'\x1B' // escape
 #define BUFFER_VALUE_COUNT	( AUDIO_BUFFER_SIZE * 2 )
 
 static bool ReadFile_( const char *pcName, CStr &roData );
