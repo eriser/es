@@ -524,7 +524,7 @@ bool COrgOp::Load( CStr &roSrc, unsigned int uiIDOffset )
 	unsigned int uiMaxIInternalInt = 0;
 	unsigned int uiMaxIInternalUInt = 0;
 	unsigned int uiMaxIInternalFlt = 0;
-	COp *poOp;
+	COp *poOp = 0;
 	
 	// <mod date="2010-12-07">
 	CList<CArray<unsigned int> *> oLstArrID;
