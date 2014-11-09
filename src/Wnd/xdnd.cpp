@@ -204,29 +204,30 @@ CStr Dnd::getDroppedFilenames(const XEvent& xEvent)
 	unsigned char*  s = NULL;
 	Atom            actualType;
 	int             actualFormat;
-	int             offset = 0;
-
+	long             offset = 0;
+	//int             offset = 0;
+    
 	do
 	{
-		if(XGetWindowProperty(m_pDisplay, xEvent.xany.window, xEvent.xselection.property, offset / sizeof(unsigned char *), 8, False, AnyPropertyType,
+		if(XGetWindowProperty(m_pDisplay, xEvent.xany.window, xEvent.xselection.property, offset, 8, False, AnyPropertyType,
 				   &actualType, &actualFormat, &numItems, &bytesRemaining, &s) != Success)
 		{
 			XFree(s);
 			return filename;
 		}
-
+        
 		//assert(s);
-		if( s ) // mod
+		if( s && numItems ) // mod
 		{
 			filename += CStr((char*) s);
 			XFree(s);
-			offset += numItems;
+			offset += ( numItems * sizeof( char ) ) / 4; // Offset must be in 32-bit quantities!
 		}
 	}
 	while (bytesRemaining > 0);
 
 	sendFinished();
-
+        
 	return filename;
 }
 
