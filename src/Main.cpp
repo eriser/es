@@ -207,13 +207,13 @@ void Main()
 	static TWnd oWnd;
 	static CCtrl oCtrl( &oWnd, &oOrgOp_, &l_oASOut_ );
 
-	oWnd.m_poHandler	= &oCtrl;
-	oWnd.m_iPosX		= 150;
-	oWnd.m_iPosY		= 150;
-	oWnd.m_iWindowWidth	= 700;
-	oWnd.m_iWindowHeight	= 500;
+	oWnd.m_poHandler		= &oCtrl;
+	oWnd.m_iPosX			= 150;
+	oWnd.m_iPosY			= 150;
+	oWnd.m_iWindowWidth		= 800;
+	oWnd.m_iWindowHeight	= 550;
 	oWnd.m_bIsFullScreen	= false;
-	oWnd.m_pcTitle		= APP_NAME;
+	oWnd.m_pcTitle			= APP_NAME;
 
 	if( !oWnd.Run() )
 		return;
