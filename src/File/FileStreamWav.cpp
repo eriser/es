@@ -10,9 +10,14 @@
 #include "FileStreamWav.h"
 
 #ifndef _WAVEFORMATEX_
-#define DWORD unsigned long int
-#define WORD unsigned short int
-#define BYTE unsigned char
+
+#if !defined( DWORD ) || !defined( WORD ) || !defined( BYTE )
+#include <inttypes.h>
+#define DWORD uint32_t // unsigned long int
+#define WORD uint16_t // unsigned short int
+#define BYTE uint8_t // unsigned char
+#endif // DWORD WORD BYTE
+
 #define WAVE_FORMAT_PCM 1
 typedef struct { 
 	WORD wFormatTag;
@@ -90,8 +95,8 @@ bool CFileStreamWav::Open( const char * pcFileName, unsigned int uiFlags )
 	// 1:  1   1   0  // error (hier)					x
 	// 2:  1   0   1  // header schreiben					x
 	// 3:  1   0   0  // error (in CFile)					x
-	// 4:  0   1   1  // header lesen, überprüfen, vorspulen, schreiben	x
-	// 5:  0   1   0  // header lesen, überprüfen				x
+	// 4:  0   1   1  // header lesen, Ã¼berprÃ¼fen, vorspulen, schreiben	x
+	// 5:  0   1   0  // header lesen, Ã¼berprÃ¼fen				x
 	// 6:  0   0   1  // error (hier)					x
 	// 7:  0   0   0  // error (in CFile)					x
 	
