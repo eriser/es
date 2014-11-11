@@ -18,7 +18,7 @@ ifeq ($(CFG),Debug)
   TARGET = prj.exe
   C_INCLUDE_DIRS = -I"../src/EXTERN" 
   C_PREPROC = -D_DEBUG -D__WINDOWS__ 
-  CFLAGS = -pipe -pg -Wall -W -g2 -O0 -frtti -fexceptions # -pedantic
+  CFLAGS = -pipe -pedantic -pg -Wno-variadic-macros -Wall -W -g2 -O0 -frtti -fexceptions 
   RC_INCLUDE_DIRS = 
   RC_PREPROC = 
   RCFLAGS = 
@@ -33,13 +33,13 @@ ifeq ($(CFG),Release)
   TARGET = prj.exe
   C_INCLUDE_DIRS = -I"../src/EXTERN" 
   C_PREPROC = -D_RELEASE -D__WINDOWS__ 
-  CFLAGS = -pipe -ffast-math -fno-builtin -Wall -W -g0 -O0 -fno-rtti -fno-exceptions 
+  CFLAGS = -pipe -ffast-math -W -g0 -O3 -fno-rtti -fno-exceptions 
   RC_INCLUDE_DIRS = 
   RC_PREPROC = 
   RCFLAGS = 
   LIB_DIRS = -L"../bin/lib" 
-  LIBS = -lkernel32 -luser32 -lgdi32 -lshell32 -lwinmm -ldsound -lopengl32 -lglu32 -lmsvcrt 
-  LDFLAGS = -pipe -mwindows -Tlink.ld -nostdlib -nodefaultlibs -nostartfiles --thumb-entry=_Prolog
+  LIBS = -lgdi32 -lwinmm -ldsound -lopengl32 -lglu32 
+  LDFLAGS = -pipe -mwindows
 endif
 
 ifeq ($(OS),Windows_NT)

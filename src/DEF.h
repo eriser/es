@@ -31,7 +31,7 @@
 //#define USE_EDIT_PATCH
 #endif // _DEBUG
 #define USE_ASM
-#define COND_NOSTD			( ( !defined( _DEBUG ) || defined( USE_NO_STD ) ) && defined( __GNUC__ ) && defined( __WINDOWS__ ) )
+#define COND_NOSTD				false // ( ( !defined( _DEBUG ) || defined( USE_NO_STD ) ) && defined( __GNUC__ ) && defined( __WINDOWS__ ) )
 #define COND_SUBSYS_WINDOW		( !defined( _DEBUG ) && !defined( VERSION_RUNTIME ) && defined( __WINDOWS__ ) )
 
 #if !defined( VERSION_RUNTIME ) && defined( _DEBUG )
@@ -45,7 +45,7 @@
 //#define VERSION_RUNTIME_MODE_RENDER_TO_FILE
 
 #define RUNTIME_FILE_NAME_RENDER	"out.wav"
-#define RUNTIME_FILE_NAME_PATCH		"../data/run.patch.txt"
+#define RUNTIME_FILE_NAME_PATCH	"../data/run.patch.txt"
 #define RUNTIME_FILE_NAME_DEF		"../../data/run.def.txt"
 #define RUNTIME_FILE_NAME_REG		"../../data/run.reg.txt"
 #elif defined( USE_EDIT_PATCH )
@@ -53,11 +53,11 @@
 #endif // VERSION_RUNTIME
 
 
-#define PI				3.1415926535897932384626433832795
-#define PI2				6.283185307179586476925286766559
+#define PI					3.1415926535897932384626433832795
+#define PI2					6.283185307179586476925286766559
 #define PI_2				1.5707963267948966192313216916398
 #define PI_4				0.78539816339744830961566084581988
-#define E				2.7182818284590452353602874713527
+#define E					2.7182818284590452353602874713527
 
 #define	AUDIO_SAMPLE_FREQ		44100 // 48000
 #ifdef LOW_LATENCY
@@ -65,19 +65,19 @@
 #else
 #define AUDIO_BUFFER_SIZE		1024 * 8 //4 //16 // 1024 // 2048 //( 1024 * 4 ) // 4096 samples = ~93 ms
 #endif // LOW_LATENCY
-#define AUDIO_SAMPLE_TIME		( 1.0 / AUDIO_SAMPLE_FREQ )
-#define AUDIO_VALUE_MAX			32700 //32767
+#define AUDIO_SAMPLE_TIME	( 1.0 / AUDIO_SAMPLE_FREQ )
+#define AUDIO_VALUE_MAX		32700 //32767
 
 #define MIN(a, b)			(((a) < (b)) ? (a) : (b))
 #define	MAX(a, b)			(((a) > (b)) ? (a) : (b))
 
 // ref: http://www.fefe.de/intof.html
-#define __HALF_MAX_SIGNED(type)		((type)1 << (sizeof(type)*8-2))
+#define __HALF_MAX_SIGNED(type)	((type)1 << (sizeof(type)*8-2))
 #define __MAX_SIGNED(type)		(__HALF_MAX_SIGNED(type) - 1 + __HALF_MAX_SIGNED(type))
-#define __MIN_SIGNED(type)		(-1 - __MAX_SIGNED(type))
+#define __MIN_SIGNED(type)			(-1 - __MAX_SIGNED(type))
 
-#define __MIN(type)			((type)-1 < 1?__MIN_SIGNED(type):(type)0)
-#define __MAX(type)			((type)~__MIN(type))
+#define __MIN(type)				((type)-1 < 1?__MIN_SIGNED(type):(type)0)
+#define __MAX(type)				((type)~__MIN(type))
 
 
 // ref: https://svn.blender.org/svnroot/bf-blender/trunk/lib/darwin-8.x.i386/sdl/include/SDL_stdinc.h (MOD)
@@ -164,12 +164,12 @@ ES_COMPILE_TIME_ASSERT( enum, sizeof(ES_DUMMY_ENUM) == sizeof(int) )
 
 
 #if !defined( _MSC_VER ) // ANSI C
-#define SCANF( buf, fmt, ... )		scanf( fmt, __VA_ARGS__ )
-#define SSCANF(	buf, fmt, ... )		sscanf( buf, fmt, __VA_ARGS__ )
+#define SCANF( buf, fmt, ... )			scanf( fmt, __VA_ARGS__ )
+#define SSCANF(	buf, fmt, ... )			sscanf( buf, fmt, __VA_ARGS__ )
 #define SPRINTF( buf, size, fmt, ... ) 	sprintf( buf, fmt, __VA_ARGS__ )
 #else
-#define SCANF( buf, fmt, ... )		scanf( fmt, __VA_ARGS__ )
-#define SSCANF(	buf, fmt, ... )		sscanf_s( buf, fmt, __VA_ARGS__ )
+#define SCANF( buf, fmt, ... )			scanf( fmt, __VA_ARGS__ )
+#define SSCANF(	buf, fmt, ... )			sscanf_s( buf, fmt, __VA_ARGS__ )
 #define SPRINTF( buf, size, fmt, ... )	sprintf_s( buf, size, fmt, __VA_ARGS__ )
 #endif // !defined( _MSC_VER )
 

@@ -10,7 +10,7 @@ else
 endif
 
 PROJECT = prj_lib
-CC = g++.exe
+CC = g++
 
 ifeq ($(CFG),Debug)
   OBJ_DIR = Debug
@@ -18,7 +18,7 @@ ifeq ($(CFG),Debug)
   TARGET = prj.exe
   C_INCLUDE_DIRS = -I"../src/EXTERN" 
   C_PREPROC = -D_DEBUG -D__WINDOWS__ -DVERSION_LIB 
-  CFLAGS = -pipe -Wall -W -g2 -O0 -frtti -fexceptions # -pedantic
+  CFLAGS = -pipe -pedantic -Wall -W -g2 -O0 -frtti -fexceptions 
   RC_INCLUDE_DIRS = 
   RC_PREPROC = 
   RCFLAGS = 
@@ -33,7 +33,7 @@ ifeq ($(CFG),Release)
   TARGET = prj.exe
   C_INCLUDE_DIRS = -I"../src/EXTERN" 
   C_PREPROC = -D_RELEASE -D__WINDOWS__ -DVERSION_LIB 
-  CFLAGS = -pipe -ffast-math -fno-builtin -Wall -W -g0 -O3 -fno-rtti -fno-exceptions 
+  CFLAGS = -pipe -ffast-math -W -g0 -O3 -fno-rtti -fno-exceptions 
   RC_INCLUDE_DIRS = 
   RC_PREPROC = 
   RCFLAGS = 
