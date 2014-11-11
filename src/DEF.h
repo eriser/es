@@ -31,7 +31,7 @@
 //#define USE_EDIT_PATCH
 #endif // _DEBUG
 #define USE_ASM
-#define COND_NOSTD				false // ( ( !defined( _DEBUG ) || defined( USE_NO_STD ) ) && defined( __GNUC__ ) && defined( __WINDOWS__ ) )
+#define COND_NOSTD				( 0 ) // ( ( !defined( _DEBUG ) || defined( USE_NO_STD ) ) && defined( __GNUC__ ) && defined( __WINDOWS__ ) )
 #define COND_SUBSYS_WINDOW		( !defined( _DEBUG ) && !defined( VERSION_RUNTIME ) && defined( __WINDOWS__ ) )
 
 #if !defined( VERSION_RUNTIME ) && defined( _DEBUG )
