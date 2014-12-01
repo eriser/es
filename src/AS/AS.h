@@ -79,7 +79,7 @@ protected:
 
 // IMPORTANT!
 #define AS_ALSA_DEV_IN	"plughw:0,0" // "default"
-#define AS_ALSA_DEV_OUT	"plughw:0,0" // "default" //"file:'./out.raw',raw"
+#define AS_ALSA_DEV_OUT	"default" // "plughw:0,0" // "default" //"file:'./out.raw',raw"
 
 // rem:
 // http://soundprogramming.net/programming_apis/alsa_tutorial_1_initialization
